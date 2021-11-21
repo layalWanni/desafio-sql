@@ -35,7 +35,7 @@ public class ProdutoDAO {
     }
 
     public void cadastrarProduto(Produto produto){
-        String sql = "insert into desafio-sql(nomeProduto, quantidadeProduto, precoCusto, precoVenda) value (?,?,?,?)";
+        String sql = "insert into produtos(nomeProduto, quantidadeProduto, precoCusto, precoVenda) value (?,?,?,?)";
         try{
             PreparedStatement stml = connection.prepareStatement(sql);
             stml.setString(1, produto.getNomeProduto());
@@ -50,7 +50,7 @@ public class ProdutoDAO {
     }
 
     public List<Produto> listarProdutos(){
-        String sql = "select * from deafio-sql";
+        String sql = "select * from produtos";
         try{
             PreparedStatement stml = connection.prepareStatement(sql);
             ResultSet resultSet = stml.executeQuery();
@@ -73,7 +73,7 @@ public class ProdutoDAO {
 
     public void remover(Long id){
         try{
-            String sql = "delete from desafio-sql where idProduto = ?";
+            String sql = "delete from produtos where idProduto = ?";
             PreparedStatement stml = connection.prepareStatement(sql);
             stml.setLong(1,id);
             stml.execute();
@@ -88,13 +88,13 @@ public class ProdutoDAO {
         String sql = null;
         switch (opcao){
             case 1:
-                sql = "update desafio-sql set nomeProduto = ? where idProduto = ?";
+                sql = "update produtos set nomeProduto = ? where idProduto = ?";
             case 2:
-                sql = "update desafio-sql set quantidadeProduto = ? where idProduto = ?";
+                sql = "update produtos set quantidadeProduto = ? where idProduto = ?";
             case 3:
-                sql = "update desafio-sql set precoCusto = ? where idProduto = ?";
+                sql = "update produtos set precoCusto = ? where idProduto = ?";
             case 4:
-                sql = "update desafio-sql set precoVenda = ? where idProduto = ?";
+                sql = "update produtos set precoVenda = ? where idProduto = ?";
         }
         try{
             PreparedStatement stml = connection.prepareStatement(sql);
