@@ -12,7 +12,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         while (true){
-            System.out.print("1 - Cadastrar Produto\n2 - Listar Produtos\n3 - Editar Produto\n4 - Remover Produto\n-> ");
+            System.out.print("\n1 - Cadastrar Produto\n2 - Listar Produtos\n3 - Editar Produto\n4 - Remover Produto\n-> ");
             switch (Integer.parseInt(input.nextLine())){
                 case 1:
                     produtoView.cadastrarProduto();

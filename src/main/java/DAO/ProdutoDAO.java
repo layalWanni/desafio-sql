@@ -89,12 +89,16 @@ public class ProdutoDAO {
         switch (opcao){
             case 1:
                 sql = "update produtos set nomeProduto = ? where idProduto = ?";
+                break;
             case 2:
                 sql = "update produtos set quantidadeProduto = ? where idProduto = ?";
+                break;
             case 3:
                 sql = "update produtos set precoCusto = ? where idProduto = ?";
+                break;
             case 4:
                 sql = "update produtos set precoVenda = ? where idProduto = ?";
+                break;
         }
         try{
             PreparedStatement stml = connection.prepareStatement(sql);
