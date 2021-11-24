@@ -22,8 +22,8 @@ public class ProdutoDAO {
         String sql = "create table if not exists produtos(idProduto int primary key auto_increment," +
                 "nomeProduto VARCHAR(50) NOT NULL," +
                 "quantidadeProduto INT," +
-                "precoCusto INT," +
-                "precoVenda INT)";
+                "precoCusto DECIMAL(10,2)," +
+                "precoVenda DECIMAL(10,2))";
         try {
             PreparedStatement stml = connection.prepareStatement(sql);
             stml.execute();
